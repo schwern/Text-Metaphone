@@ -1,0 +1,16 @@
+Changes
+MANIFEST
+Makefile.PL
+Metaphone.pm
+Metaphone.xs
+metachar.h
+metaphone_c.c
+metaphone.h
+my_memory.c
+my_memory.h
+myconsts.h
+mytypes.h
+t/metaphone.t
+README
+INSTALL
+typemap
