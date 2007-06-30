@@ -22,25 +22,25 @@ print "ok 1\n";
 my $t_idx = 2;
 
 my %test_phones = (
-		   'recrudescence' => 'RKRTSNS',
-		   'moist' => 'MST',
-		   'Gutenberg' => 'KTNBRK',
-		   'recridessence' => 'RKRTSNS',
-		   'crapulance' => 'KRPLNS',
-		   'cough' => 'KF',
-		   'coffee' => 'KF',
-		   'tchrist' => 'TKRST',
-		   'Schwern' => 'XWRN',
-		   'Schwartz' => 'XWRTS',
-		   'Avulsion' => 'AFLXN',
-		   'Aeon' => 'EN',
-		   'Mushrooms' => 'MXRMS',
-		   'Way'       => 'W',
-		   'What'      => 'HT',
-		   'Wierd'     => 'WRT',
-		   ''          => '',
-		   'picklehead'=> 'PKLHT',
-		   );
+           'recrudescence' => 'RKRTSNS',
+           'moist' => 'MST',
+           'Gutenberg' => 'KTNBRK',
+           'recridessence' => 'RKRTSNS',
+           'crapulance' => 'KRPLNS',
+           'cough' => 'KF',
+           'coffee' => 'KF',
+           'tchrist' => 'TKRST',
+           'Schwern' => 'XWRN',
+           'Schwartz' => 'XWRTS',
+           'Avulsion' => 'AFLXN',
+           'Aeon' => 'EN',
+           'Mushrooms' => 'MXRMS',
+           'Way'       => 'W',
+           'What'      => 'HT',
+           'Wierd'     => 'WRT',
+           ''          => '',
+           'picklehead'=> 'PKLHT',
+           );
 
 foreach my $word (keys %test_phones) {
     my $phoned = Metaphone($word);
