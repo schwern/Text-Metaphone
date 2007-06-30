@@ -28,19 +28,13 @@ FIX_WARN
 }
 
 WriteMakefile(
-    'NAME'	=> 'Text::Metaphone',
-    'VERSION_FROM' => 'Metaphone.pm', # finds $VERSION
-#    'LIBS'	=> [''],   # e.g., '-lm' 
-#    'DEFINE'	=> '',     # e.g., '-DHAVE_SOMETHING' 
-#    'INC'	=> '',     # e.g., '-I/usr/include/other' 
-    'C'         => ['metaphone_c.c my_memory.c'],
-    'OBJECT'    => 'metaphone_c.o my_memory.o Metaphone.o',
-    'dist'      => {COMPRESS => 'gzip -9',
-		    SUFFIX   => '.gz',
-                    DIST_DEFAULT => 'all tardist',
-		   },
-#CCFLAGS => '-Dbool=char -DHAS_BOOL -I/usr/local/include -Wall -pedantic',
-#OPTIMIZE => '-g',
+    NAME          => 'Text::Metaphone',
+    VERSION_FROM  => 'Metaphone.pm',
+    PREREQ_PM     => {
+        'Test::More'  => 0.47
+    },
+    C             => ['metaphone_c.c my_memory.c'],
+    OBJECT        => 'metaphone_c.o my_memory.o Metaphone.o',
 );
 
 sub MY::postamble {
