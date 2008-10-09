@@ -18,13 +18,10 @@ $VERSION = 1.96;
 
 bootstrap Text::Metaphone $VERSION;
 
-# I should probably do this in XS, too...
 sub Metaphone {
     my($word, $len) = @_;
-    my($phoned);
     $len = 0 unless defined $len;
-    metaphone($word, $len, $phoned);
-    return $phoned;
+    return _real_metaphone($word, $len);
 }
 
 1;
