@@ -18,12 +18,6 @@ $VERSION = 1.96;
 
 bootstrap Text::Metaphone $VERSION;
 
-sub Metaphone {
-    my($word, $len) = @_;
-    $len = 0 unless defined $len;
-    return _real_metaphone($word, $len);
-}
-
 1;
 
 __END__
