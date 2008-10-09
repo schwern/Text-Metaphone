@@ -1,12 +1,10 @@
-Revision history for Perl extension Text::Metaphone.
-
 0.01  Tue Dec  2 05:15:49 1997
-	- original version; created by h2xs 1.18
+    - original version; created by h2xs 1.18
 
 0.02  Tue Dec  2 10:18:27 EST 1997
-	- First release to CPAN.
-	- Added POD documentation.
-	- MaxPhonemeLen is no longer exported.
+    - First release to CPAN.
+    - Added POD documentation.
+    - MaxPhonemeLen is no longer exported.
 
 Heh, what happened to 1.00?  Never existed, it was supposed to be the gamma
 release of the pure perl version of the module.  Skipped straight to 1.90, 
@@ -15,43 +13,43 @@ alpha XS version.
 BTW  The new XS version is about 40x faster than the old perl version. :)
 
 1.90  Mon Jan 4 03:20:00 EST 1999
-	- First working XS
-	- Has memory leak
-	- Fixed Schw bug
-	* Alterations to algorithm:
-		SCHW 	-> X	'Schwern', 'Schwartz'
-		SCH  	-> SK	'School'
+    - First working XS
+    - Has memory leak
+    - Fixed Schw bug
+    * Alterations to algorithm:
+        SCHW    -> X    'Schwern', 'Schwartz'
+        SCH     -> SK   'School'
 
 1.91  Mon Jan 4 21:00:00 EST 1999
-	- Fixed memory leak
-	- Started POD
+    - Fixed memory leak
+    - Started POD
 
 1.92  Tue Jan  5 21:44:11 EST 1999
-	* Alterations to API
-		removed Text::Soundex emulation layer
-		removed everything but Metaphone()
-	* Alterations to algorithm:
-		CHR	-> KR	'Christ', 'tchrist'
-	- Finished POD
-	- First CPAN release since 0.02
+    * Alterations to API
+        removed Text::Soundex emulation layer
+        removed everything but Metaphone()
+    * Alterations to algorithm:
+        CHR -> KR   'Christ', 'tchrist'
+    - Finished POD
+    - First CPAN release since 0.02
 
 
 1.93  Thu Jan 21 21:34:40 EST 1999
-	* Removed empty string asseration.
-	* Fixed "W if followed by a vowel"  (Thanks to Paul Walmsley)
-	* Fixed "Ignore C if SC[IEY]"
-	* Fixed array boundry problems in ENCODE.
+    * Removed empty string asseration.
+    * Fixed "W if followed by a vowel"  (Thanks to Paul Walmsley)
+    * Fixed "Ignore C if SC[IEY]"
+    * Fixed array boundry problems in ENCODE.
 
 
 1.94  Fri Jan 22 15:26:30 EST 1999
-	- Defined NULL for myself.  Fixes bug on SunOS 4.1.x
+    - Defined NULL for myself.  Fixes bug on SunOS 4.1.x
 
 1.95  Wed Jan 27 15:02:47 EST 1999
-	* Fixed 'CK'->'KK' bug. ('CK' is now 'K')
-	- Added README and INSTALL docs
-	- Moved test.pl to t/metaphone.t
+    * Fixed 'CK'->'KK' bug. ('CK' is now 'K')
+    - Added README and INSTALL docs
+    - Moved test.pl to t/metaphone.t
 
 1.96  Thu Mar  4 18:44:02 EST 1999
-	- DumbFS fix, changed metaphone.c to metaphone_c.c so that
-	  the XS generated file Metaphone.c does not conflict with
-	  it on case-insensitive filesystems. (Thanks Pudge)
+    - DumbFS fix, changed metaphone.c to metaphone_c.c so that
+      the XS generated file Metaphone.c does not conflict with
+      it on case-insensitive filesystems. (Thanks Pudge)
