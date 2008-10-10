@@ -1,13 +1,15 @@
+#!/usr/bin/perl
+
+use strict;
 use ExtUtils::MakeMaker;
-# See lib/ExtUtils/MakeMaker.pm for details of how to influence
-# the contents of the Makefile that is written.
+my $mm_ver = ExtUtils::MakeMaker->VERSION;
 
 eval {
-	require Text::Metaphone;
+    require Text::Metaphone;
 };
 
 unless ($@) { # Make sure we did find the module.
-	print <<CHANGE_WARN if $Text::Metaphone::VERSION < 1.00;
+    print <<CHANGE_WARN if $Text::Metaphone::VERSION < 1.00;
 
 NOTE:  There have been API changes between this version and any
 older than version 1.00!  Also, the metaphone algorithm has been
@@ -27,25 +29,40 @@ Please read the Changes file for details.
 FIX_WARN
 }
 
+use Config;
+my $obj_ext = $Config{obj_ext};
+
 WriteMakefile(
     NAME          => 'Text::Metaphone',
     VERSION_FROM  => 'Metaphone.pm',
+    ABSTRACT_FROM => 'Metaphone.pm',
+    AUTHOR        => 'Michael G Schwern <schwern@pobox.com>',
+    ($mm_ver >= 6.31 ? (LICENSE => 'perl') : ()),
+
     PREREQ_PM     => {
         'Test::More'  => 0.47
     },
-    C             => ['metaphone_c.c my_memory.c'],
-    OBJECT        => 'metaphone_c.o my_memory.o Metaphone.o',
+
+    C             => ['metaphone_c.c', 'my_memory.c'],
+    OBJECT        => "metaphone_c$obj_ext my_memory$obj_ext Metaphone$obj_ext",
+
+    ($mm_ver <= 6.44 ? () : (META_MERGE => {
+        requires  => {
+            perl        =>      '5.6.0',
+        },
+        resources => {
+            license     =>      'http://dev.perl.org/licenses/',
+            homepage    =>      'http://search.cpan.org/dist/Text-Metaphone/',
+            bugtracker  =>      'http://rt.cpan.org/NoAuth/Bugs.html?Dist=Text-Metaphone',
+            repository  =>      'http://svn.schwern.org/repos/CPAN/Text-Metaphone',
+        },
+    }))
 );
 
 sub MY::postamble {
 '
-metaphone_c.o: mytypes.h myconsts.h my_memory.o metachar.h metaphone.h metaphone_c.c
+metaphone_c$obj_ext: mytypes.h myconsts.h my_memory.o metachar.h metaphone.h metaphone_c.c
 
-my_memory.o: mytypes.h myconsts.h my_memory.c my_memory.h
+my_memory$obj_ext: mytypes.h myconsts.h my_memory.c my_memory.h
 '
 }
-
-
-
-
-

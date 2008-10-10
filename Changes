@@ -1,7 +1,14 @@
-2.01
+2.01  Fri Oct 10 08:56:32 EDT 2008
     Bug Fixes
     * An allocation bug would cause a crash if your phoned word is the
       same length as the original word.  (Thanks Dan Markham)
+    - Fixed POD errors
+
+    Docs
+    - Mention some of the other phonetic modules.
+
+    Portability
+    * Fix compilation on VMS [rt.cpan.org 36208]
 
 
 2.00  Sat Jun 30 01:48:07 CDT 2007

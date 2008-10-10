@@ -1,20 +1,20 @@
 package Text::Metaphone;
 
 use strict;
-use vars qw($VERSION @ISA @EXPORT @EXPORT_OK);
+use warnings;
 
 require Exporter;
 require DynaLoader;
 
 use integer;
 
-@ISA = qw(Exporter DynaLoader);
+our @ISA = qw(Exporter DynaLoader);
 
-@EXPORT = qw(
-	     Metaphone
+our @EXPORT = qw(
+    Metaphone
 );
 
-$VERSION = '2.00';
+our $VERSION = '2.01';
 
 bootstrap Text::Metaphone $VERSION;
 
@@ -27,12 +27,13 @@ __END__
 
 Text::Metaphone - A modern soundex.  Phonetic encoding of words.
 
-
 =head1 SYNOPSIS
 
   use Text::Metaphone;
-  $phoned_words = Metaphone('Schwern');
-  
+
+  # XWRN
+  my $phoned_word = Metaphone('Schwern');
+
 
 =head1 DESCRIPTION
 
@@ -44,9 +45,7 @@ comprehensive in its approach.
 
 =head1 FUNCTIONS
 
-=over 4
-
-=item B<Metaphone>
+=head3 Metaphone
 
     $phoned_word = Metaphone($word, $max_phone_len);
 
@@ -59,14 +58,10 @@ characters for each word.
 'sh' is encoded as 'X', 'th' is encoded as '0'.  This can be changed
 in the metaphone.h header file.
 
-=back
-
 
 =head1 CAVEATS
 
-=over 4
-
-=item Metaphone algorithm changes
+=head3 Metaphone algorithm changes
 
 I have made a few minor changes to the traditional metaphone algorithm found
 in the books.  The most significant one is that it will differenciate between
@@ -88,31 +83,31 @@ Michael G Schwern <schwern@pobox.com>
 
 =head2 Man pages
 
-L<Text::Soundex>
+L<Text::Soundex> - A simpler word hashing algorithm
+L<Text::DoubleMetaphone> - Improved metaphone
+L<Text::Phonetic> - A collection of phonetic algorithms
 
 =head2 Books, Journals and Magazines
 
-=over 3
-
-=item Binstock, Andrew & Rex, John. "Metaphone:  A Modern Soundex." I<Practical Algorithms For Programmers.>  Reading, Mass:  Addion-Wesley, 1995  pp160-169 
+=head3 Binstock, Andrew & Rex, John. "Metaphone:  A Modern Soundex." I<Practical Algorithms For Programmers.>  Reading, Mass:  Addion-Wesley, 1995  pp160-169 
 
 Contains an explaination of the basic metaphone concept & algorithm and C code
 from which I learned of Metaphone and ported this module.
 
-=item Parker, Gary. "A Better Phonetic Search." I<C Gazette>, Vol. 5, No. 4 (June/July), 1990.
+=head3 Parker, Gary. "A Better Phonetic Search." I<C Gazette>, Vol. 5, No. 4 (June/July), 1990.
 
 This is the public-domain C version of metaphone from which Binstock & Rex 
 based their own..  I haven't actually read it.
 
-=item  Philips, Lawrence. I<Computer Language>, Vol. 7, No. 12 (December), 1990.  
+=head3 Philips, Lawrence. I<Computer Language>, Vol. 7, No. 12 (December), 1990.  
 
 And here's the original Metaphone algorithm as presented in Pick BASIC.
 
-=back
 
-=head1 COPYRIGHT, et al.
+=head1 COPYRIGHT and LICENSE
 
-Copyright (c) 1997-1999 Michael G Schwern.  All Rights Reserved.
+Copyright (c) 1997, 1999, 2007-2008 Michael G Schwern.  All Rights Reserved.
+
 This program is free software; you can redistribute it and/or
 modify it under the same terms as Perl itself.
 
