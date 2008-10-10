@@ -11,7 +11,6 @@ PROTOTYPES: ENABLE
 SV *
 Metaphone(word, ...)
         char* word
-        int max_length
         PROTOTYPE: $;$
         PREINIT:
             int max_length = 0;

@@ -23,6 +23,10 @@ my %test_phones = (
            'Wierd'     => 'WRT',
            ''          => '',
            'picklehead'=> 'PKLHT',
+
+           # Caused a crash because phoned word == length of word revealing
+           # an off-by-one allocation mistake.
+           'nsxkgbsfdtp' => 'NSKSKKBSFTT',
            );
 
 foreach my $word (keys %test_phones) {

@@ -72,16 +72,13 @@ flag metaphone (
     assert(word != NULL);
     
         
-    /*-- Allocate memory for our phoned_phrase --*/
-    if( max_phonemes == 0 ) {  /* Assume largest possible */
-        if(!NewMemory((void **)phoned_word, sizeof(char) * strlen(word) + 1))
-            return ERROR;
-    }
-    else {
-        if(!NewMemory((void **)phoned_word, sizeof(char) * max_phonemes + 1))
-            return ERROR;
-    }
+    /* Assume largest possible if we're given no limit */
+    if( max_phonemes == 0 )
+        max_phonemes = strlen(word);
 
+    /*-- Allocate memory for our phoned_phrase --*/
+    if( !NewMemory((void **)phoned_word, sizeof(char) * (max_phonemes + 1)) )
+        return ERROR;
 
     /*-- The first phoneme has to be processed specially. --*/
     /* Find our first letter */
@@ -383,6 +380,6 @@ flag metaphone (
     } /* END FOR */
     
     End_Phoned_Word;
-    
+
     return(SUCCESS);
 } /* END metaphone */

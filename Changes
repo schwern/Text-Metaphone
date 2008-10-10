@@ -1,3 +1,9 @@
+2.01
+    Bug Fixes
+    * An allocation bug would cause a crash if your phoned word is the
+      same length as the original word.  (Thanks Dan Markham)
+
+
 2.00  Sat Jun 30 01:48:07 CDT 2007
     Bug Fixes
     * Metaphone() no longer leaks memory. [rt.cpan.org 20901]
@@ -6,24 +12,29 @@
     * Eliminated a Perl function wrapper around the XS code.  Its about
       twice as fast now.
 
+
 1.96  Thu Mar  4 18:44:02 EST 1999
     - DumbFS fix, changed metaphone.c to metaphone_c.c so that
       the XS generated file Metaphone.c does not conflict with
       it on case-insensitive filesystems. (Thanks Pudge)
+
 
 1.95  Wed Jan 27 15:02:47 EST 1999
     * Fixed 'CK'->'KK' bug. ('CK' is now 'K')
     - Added README and INSTALL docs
     - Moved test.pl to t/metaphone.t
 
+
 1.94  Fri Jan 22 15:26:30 EST 1999
     - Defined NULL for myself.  Fixes bug on SunOS 4.1.x
+
 
 1.93  Thu Jan 21 21:34:40 EST 1999
     * Removed empty string asseration.
     * Fixed "W if followed by a vowel"  (Thanks to Paul Walmsley)
     * Fixed "Ignore C if SC[IEY]"
     * Fixed array boundry problems in ENCODE.
+
 
 1.92  Tue Jan  5 21:44:11 EST 1999
     * Alterations to API
@@ -34,9 +45,11 @@
     - Finished POD
     - First CPAN release since 0.02
 
+
 1.91  Mon Jan 4 21:00:00 EST 1999
     - Fixed memory leak
     - Started POD
+
 
 1.90  Mon Jan 4 03:20:00 EST 1999
     - First working XS
