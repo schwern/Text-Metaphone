@@ -60,9 +60,10 @@ WriteMakefile(
 );
 
 sub MY::postamble {
-'
-metaphone_c$obj_ext: mytypes.h myconsts.h my_memory.o metachar.h metaphone.h metaphone_c.c
+"
+metaphone_c$obj_ext : mytypes.h myconsts.h my_memory.o metachar.h metaphone.h metaphone_c.c
 
-my_memory$obj_ext: mytypes.h myconsts.h my_memory.c my_memory.h
-'
+my_memory$obj_ext : mytypes.h myconsts.h my_memory.c my_memory.h
+
+"
 }
