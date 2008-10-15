@@ -14,7 +14,7 @@ our @EXPORT = qw(
     Metaphone
 );
 
-our $VERSION = '2.01';
+our $VERSION = '20081015';
 
 bootstrap Text::Metaphone $VERSION;
 
