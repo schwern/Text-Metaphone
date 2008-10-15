@@ -3,6 +3,7 @@
 #include "XSUB.h"
 
 #include "metaphone.h"
+#include "my_memory.h"
 
 MODULE = Text::Metaphone        PACKAGE = Text::Metaphone
 
@@ -20,8 +21,11 @@ Metaphone(word, ...)
             if( items > 1 ) {
                 max_length = SvIV(ST(1));
             }
+
             metaphone(word, max_length, &phoned_word);
+
             RETVAL = newSVpv(phoned_word, 0);
-            free(phoned_word);
+            FreeMemory(phoned_word);
+
         OUTPUT:
             RETVAL

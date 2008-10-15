@@ -1,3 +1,9 @@
+20081015
+    Bug Fixes
+    * Fixed freeing of internal string so it will now build on Strawberry.
+      [rt.cpan.org 34448]
+
+
 2.01  Fri Oct 10 08:56:32 EDT 2008
     Bug Fixes
     * An allocation bug would cause a crash if your phoned word is the
