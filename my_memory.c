@@ -84,17 +84,3 @@ flag ResizeMemory(void **ppv, size_t sizeNew) {
 	
 	return (pbNew != NULL);
 }
-
-
-
-
-
-
-
-
-
-/* void FillMemory(void *pv, byte fill, size_t size) { */
-/* 	assert(ValidPointer(pv, size)); */
-/* 	 */
-/* 	memset(pv, fill, size); */
-/* } */

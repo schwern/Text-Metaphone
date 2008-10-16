@@ -62,18 +62,5 @@ void FreeMemory (void *pv);
 	---------------------------------------- */
 flag ResizeMemory(void **ppv, size_t sizeNew);
 
-/*	---------------------------------
-	FillMemory -- Fill memory in a block with a given byte
-		Input
-			pv	--	Pointer to the memory block to be filled
-			fill --	byte to fill the memory with
-			size -- how much memory to fill
-	
-	NOTE:  Will assert if pv doesn't point to at least size memory
-	---------------------------------- */
-/* REMEMBER:  Add macro to replace FillMemory with memset */
-void FillMemory(void *pv, byte fill, size_t size);
-
-
 #endif
 
