@@ -1,4 +1,4 @@
-20081015
+20081017  Fri Oct 17 10:58:33 PDT 2008
     Bug Fixes
     * Fixed freeing of internal string so it will now build on Strawberry.
       [rt.cpan.org 34448]
