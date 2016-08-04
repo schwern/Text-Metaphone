@@ -72,7 +72,7 @@ My changes can be turned off by defining the USE_TRADITIONAL_METAPHONE
 flag in metaphone.h.
 
 Due to these changes, any users of Metaphone v1.00 or earlier which have stored
-metaphonetic encodings, they should recalculate those with the new verison.
+metaphonetic encodings, they should recalculate those with the new version.
 
 
 =head1 AUTHOR
@@ -91,7 +91,7 @@ L<Text::Phonetic> - A collection of phonetic algorithms
 
 =head3 Binstock, Andrew & Rex, John. "Metaphone:  A Modern Soundex." I<Practical Algorithms For Programmers.>  Reading, Mass:  Addion-Wesley, 1995  pp160-169 
 
-Contains an explaination of the basic metaphone concept & algorithm and C code
+Contains an explanation of the basic metaphone concept & algorithm and C code
 from which I learned of Metaphone and ported this module.
 
 =head3 Parker, Gary. "A Better Phonetic Search." I<C Gazette>, Vol. 5, No. 4 (June/July), 1990.
