@@ -27,6 +27,10 @@ my %test_phones = (
            # Caused a crash because phoned word == length of word revealing
            # an off-by-one allocation mistake.
            'nsxkgbsfdtp' => 'NSKSKKBSFTT',
+
+           # Another reported crash.
+           # https://rt.cpan.org/Ticket/Display.html?id=73816
+           'jgVqiNdxNVLpVBxQBlxghDx' => 'JKFKNTKSNFLPFBKSKBLKSTKS'
            );
 
 foreach my $word (keys %test_phones) {
