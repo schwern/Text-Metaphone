@@ -15,3 +15,6 @@ MYMETA.*
 
 # Distribution build dir and archive
 Text-Metaphone-*/
+
+# The built XS file.
+Metaphone.c
