@@ -52,9 +52,9 @@ WriteMakefile(
         },
         resources => {
             license     =>      'http://dev.perl.org/licenses/',
-            homepage    =>      'http://search.cpan.org/dist/Text-Metaphone/',
-            bugtracker  =>      'http://rt.cpan.org/NoAuth/Bugs.html?Dist=Text-Metaphone',
-            repository  =>      'http://svn.schwern.org/repos/CPAN/Text-Metaphone',
+            homepage    =>      'https://metacpan.org/release/Text-Metaphone',
+            bugtracker  =>      'https://github.com/schwern/Text-Metaphone/issues',
+            repository  =>      'https://github.com/schwern/Text-Metaphone/',
         },
     }))
 );
