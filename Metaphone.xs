@@ -23,6 +23,8 @@ Metaphone(word, ...)
 
             phoned_word = metaphone(word, max_length);
             RETVAL = newSVpv(phoned_word, 0);
+/* Use the real free() to free memory allocated by the real calloc() */
+#undef free
             free(phoned_word);
         OUTPUT:
             RETVAL
