@@ -28,9 +28,9 @@ my %test_phones = (
            # an off-by-one allocation mistake.
            'nsxkgbsfdtp' => 'NSKSKKBSFTT',
 
-           # Another reported crash.
-           # https://rt.cpan.org/Ticket/Display.html?id=73816
-           'jgVqiNdxNVLpVBxQBlxghDx' => 'JKFKNTKSNFLPFBKSKBLKSTKS'
+           # An X on the end can make the phoned word one larger than the original.
+           'jgVqiNdxNVLpVBxQBlxghDx' => 'JKFKNTKSNFLPFBKSKBLKSTKS',
+           'ax1x1x'                  => 'AKSKSKS'
            );
 
 foreach my $word (keys %test_phones) {

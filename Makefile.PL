@@ -43,8 +43,8 @@ WriteMakefile(
         'Test::More'  => 0.47
     },
 
-    C             => ['metaphone_c.c', 'my_memory.c'],
-    OBJECT        => "metaphone_c$obj_ext my_memory$obj_ext Metaphone$obj_ext",
+    C             => ['metaphone_c.c'],
+    OBJECT        => "metaphone_c$obj_ext Metaphone$obj_ext",
 
     ($mm_ver <= 6.44 ? () : (META_MERGE => {
         requires  => {
@@ -61,9 +61,7 @@ WriteMakefile(
 
 sub MY::postamble {
 "
-metaphone_c$obj_ext : mytypes.h myconsts.h my_memory.o metachar.h metaphone.h metaphone_c.c
-
-my_memory$obj_ext : mytypes.h myconsts.h my_memory.c my_memory.h
+metaphone_c$obj_ext : metachar.h metaphone.h metaphone_c.c
 
 "
 }

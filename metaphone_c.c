@@ -3,10 +3,9 @@
  */
  
 #include "metaphone.h"
-#include "my_memory.h"
 #include "metachar.h"
 
-#include <assert.h>
+#include <stdlib.h>
 #include <string.h>
 #include <ctype.h>
 
@@ -43,9 +42,7 @@ char Lookahead(char * word, int how_far) {
 
 
 /* phonize one letter */
-#define Phonize(c)  {(*phoned_word)[p_idx++] = c;}
-/* Slap a null character on the end of the phoned word */
-#define End_Phoned_Word {(*phoned_word)[p_idx] = '\0';}
+#define Phonize(c)  {phoned_word[p_idx++] = c;}
 /* How long is the phoned word? */
 #define Phone_Len   (p_idx)
 
@@ -53,40 +50,26 @@ char Lookahead(char * word, int how_far) {
 #define Isbreak(c)  (!isalpha(c))
 
 
-flag metaphone (
-    /* IN */
-    char *  word,
-    int     max_phonemes,
-    /* OUT */
-    char ** phoned_word 
-) {
+char *metaphone ( char *word, size_t max_phonemes ) {
     int w_idx   = 0;    /* point in the phonization we're at. */
     int p_idx   = 0;    /* end of the phoned phrase */
+    char *phoned_word;
     
-    /*-- Parameter checks --*/
-    /* Negative phoneme length is meaningless */
-    assert(max_phonemes >= 0);
-    /* Empty/null string is meaningless */
-    /* Overly paranoid */
-    /* assert(word != NULL && word[0] != '\0'); */
-    assert(word != NULL);
-    
-        
     /* Assume largest possible if we're given no limit */
     if( max_phonemes == 0 )
         max_phonemes = strlen(word);
 
-    /*-- Allocate memory for our phoned_phrase --*/
-    if( !NewMemory((void **)phoned_word, sizeof(char) * (max_phonemes + 1)) )
-        return ERROR;
+    /* It's +2 because X -> KS can result in the phoned word being
+       one larger than the original word.
+    */
+    phoned_word = calloc( max_phonemes + 2, sizeof(char) );
 
     /*-- The first phoneme has to be processed specially. --*/
     /* Find our first letter */
     for( ;  !isalpha(Curr_Letter);  w_idx++ ) {
         /* On the off chance we were given nothing but crap... */
         if( Curr_Letter == '\0' ) {
-            End_Phoned_Word
-            return SUCCESS; /* For testing */
+            return phoned_word;
         }
     }   
     
@@ -153,9 +136,11 @@ flag metaphone (
     
     
     /* On to the metaphoning */
-    for(;  Curr_Letter != '\0' && 
-            (max_phonemes == 0 || Phone_Len < max_phonemes);  
-        w_idx++) {
+    for(;
+        Curr_Letter != '\0'     && 
+        (max_phonemes == 0 || Phone_Len < max_phonemes);  
+        w_idx++
+    ) {
         /* How many letters to skip because an eariler encoding handled     
          * multiple letters */
         unsigned short int skip_letter = 0; 
@@ -374,12 +359,10 @@ flag metaphone (
             default:
                 /* nothing */
                 break;
-        } /* END SWITCH */
+        }
         
         w_idx += skip_letter;
-    } /* END FOR */
+    }
     
-    End_Phoned_Word;
-
-    return(SUCCESS);
-} /* END metaphone */
+    return phoned_word;
+}
