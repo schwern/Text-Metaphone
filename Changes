@@ -1,3 +1,15 @@
+20160804  Thu Aug  4 19:58:49 PDT 2016
+    Bug Fixes
+    * Memory error if the word ends in X. (Michael G Schwern) [rt.cpan.org 73816] [github 1]
+
+    Doc Fixes
+    * Small spelling error from Debian (Nick Morrott) [rt.cpan.org 115468]
+
+    Distribution Changes
+    * Now using Github for bugs.
+    * Now using Github for the repository.
+    * Now using metacpan.org as a homepage.
+
 20081017  Fri Oct 17 10:58:33 PDT 2008
     Bug Fixes
     * Fixed freeing of internal string so it will now build on Strawberry.
