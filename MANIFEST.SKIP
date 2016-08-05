@@ -67,3 +67,7 @@
 
 # Avoid our own distdir
 ^Text-Metaphone-20160804/
+
+# Avoid our build artifacts
+\.o$
+^Metaphone\.c$

@@ -1,3 +1,12 @@
+20160805  Fri Aug  5 12:00:12 PDT 2016
+    Bug Fixes
+    * Refix the memory allocation problem on Strawberry Perl broken in the
+      last release. (Michael G Schwern)
+
+    Distribution Changes
+    * Start using AppVeyor for CI testing of Strawberry Perl.
+      (Michael G Schwern)
+
 20160804  Thu Aug  4 19:58:49 PDT 2016
     Bug Fixes
     * Memory error if the word ends in X. (Michael G Schwern) [rt.cpan.org 73816] [github 1]
