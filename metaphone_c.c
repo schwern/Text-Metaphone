@@ -5,7 +5,12 @@
 #include "metaphone.h"
 #include "metachar.h"
 
-#include <stdlib.h>
+/* Because the string is free'd in the XS, we have to use Perl's
+   malloc/free replacements consistently.
+*/
+#include "EXTERN.h"
+#include "perl.h"
+
 #include <string.h>
 #include <ctype.h>
 
