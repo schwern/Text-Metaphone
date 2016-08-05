@@ -12,6 +12,7 @@ nytprof*
 .DS_Store
 MYMETA.*
 *.o
+*.bs
 
 # Distribution build dir and archive
 Text-Metaphone-*/
