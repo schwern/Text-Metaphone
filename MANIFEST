@@ -1,16 +1,14 @@
+.travis.yml
 Changes
-MANIFEST
+INSTALL
 Makefile.PL
+MANIFEST			This list of files
+MANIFEST.SKIP
+metachar.h
+metaphone.h
 Metaphone.pm
 Metaphone.xs
-metachar.h
 metaphone_c.c
-metaphone.h
-my_memory.c
-my_memory.h
-myconsts.h
-mytypes.h
-t/metaphone.t
 README
-INSTALL
+t/metaphone.t
 typemap
